@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labor/views/splash_view.dart';
 
 void main(){
   runApp(const LaborApp());
@@ -9,8 +10,9 @@ class LaborApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: ,
+      home: const SplashView(),
     );
   }
 }
