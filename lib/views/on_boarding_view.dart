@@ -4,7 +4,7 @@ import 'package:labor/core/widgets/custom_button.dart';
 import 'package:labor/core/widgets/custom_text_button.dart';
 import 'package:labor/core/widgets/navigator_push_remove_until.dart';
 import 'package:labor/models/on_boarding_model.dart';
-import 'package:labor/views/LoginView.dart';
+import 'package:labor/views/select_language_view.dart';
 import 'package:labor/views/widgets/on_boarding_item.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -28,7 +28,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           if (isLast == false)
             CustomTextButton(
               onPressed: () {
-                navigatorAndFinish(const LoginView(), context);
+                navigatorAndFinish(const SelectLanguageView(), context);
               },
               text: 'Skip',
               color: orangePrimaryColor,
@@ -82,7 +82,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               buttonName: isLast == true ? 'Enter' : 'Next',
               onTap: () {
                 if (isLast == true) {
-                  navigatorAndFinish(const LoginView(), context);
+                  navigatorAndFinish(const SelectLanguageView(), context);
                 } else {
                   pageController.nextPage(
                       duration: const Duration(milliseconds: 700),

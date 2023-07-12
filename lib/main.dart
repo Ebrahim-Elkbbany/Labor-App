@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:labor/constant.dart';
 import 'package:labor/views/splash_view.dart';
 
 void main(){
@@ -13,6 +14,9 @@ class LaborApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme:ThemeData(
+
+        primaryColor: kPrimaryColor,
+        unselectedWidgetColor: kPrimaryColor,
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
