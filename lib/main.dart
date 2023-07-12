@@ -14,7 +14,6 @@ class LaborApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme:ThemeData(
-
         primaryColor: kPrimaryColor,
         unselectedWidgetColor: kPrimaryColor,
         brightness: Brightness.light,
