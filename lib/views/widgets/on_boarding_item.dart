@@ -13,16 +13,16 @@ class OnBoardingItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 19),
             child: Stack(
+              alignment:Alignment.center ,
               children: [
                 Image.asset(
                   'assets/images/onBoarding_vector.png',
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Center(
-                      child: Image.asset(
+                  child: Image.asset(
                     onBoardingModel.image,
-                  )),
+                  ),
                 ),
               ],
             ),
@@ -36,7 +36,7 @@ class OnBoardingItem extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 34),
         ),
         const SizedBox(
-          height: 24,
+          height: 20,
         ),
         Text(
           onBoardingModel.subText,
