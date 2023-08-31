@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:labor/constant.dart';
-import 'package:labor/core/widgets/custom_button.dart';
-import 'package:labor/core/widgets/navigator_push_remove_until.dart';
+import 'package:labor/custom_widgets/custom_button.dart';
+import 'package:labor/custom_widgets/navigator_push_remove_until.dart';
 import 'package:labor/views/login_view.dart';
+import 'package:labor/views/on_boarding_view.dart';
 
 class SelectLanguageView extends StatefulWidget {
   const SelectLanguageView({Key? key}) : super(key: key);
@@ -25,11 +27,11 @@ class _SelectLanguageViewState extends State<SelectLanguageView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 60,
+                height: 50,
               ),
               Image.asset('assets/images/select_language.png'),
               const SizedBox(
-                height: 55,
+                height: 50,
               ),
               const Text(
                 'Find Your \nHome Service',
@@ -101,7 +103,7 @@ class _SelectLanguageViewState extends State<SelectLanguageView> {
                 ),
 
               const SizedBox(
-                height: 28,
+                height: 22,
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 20),
@@ -126,7 +128,7 @@ class _SelectLanguageViewState extends State<SelectLanguageView> {
                 ),
               ),
               const SizedBox(
-                height: 46,
+                height: 30,
               ),
               CustomButton(
                 buttonName: 'Enter',
@@ -138,7 +140,7 @@ class _SelectLanguageViewState extends State<SelectLanguageView> {
                     });
                   } else {
                     showError = false;
-                    navigatorAndFinish(const LoginView(), context);
+                    navigatorAndFinish(const OnBoardingView(), context);
                   }
                 },
               ),

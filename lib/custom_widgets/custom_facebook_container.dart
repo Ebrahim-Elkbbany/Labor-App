@@ -6,7 +6,8 @@ class CustomFaceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color:Color(0xffF9FFF6),borderRadius: BorderRadius.circular(8),border: Border.all(color: Color(0xffDFDFDF)) ),
+      decoration: BoxDecoration(
+          color:Color(0xffF9FFF6),borderRadius: BorderRadius.circular(8),border: Border.all(color: Color(0xffDFDFDF)) ),
       height: 55,
       width: double.infinity,
       child: Row(

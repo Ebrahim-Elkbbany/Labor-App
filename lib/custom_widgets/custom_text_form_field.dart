@@ -15,6 +15,11 @@ class CustomTextFormField extends StatelessWidget {
     this.label,
     this.suffix,
     this.suffixPressed,
+    this.maxLines = 1,
+    this.disabledBorderColor = const Color(0xffDFDFDF),
+    this.enabledBorderColor = const Color(0xffDFDFDF),
+    this.focusedBorderColor = kPrimaryColor,
+    this.fillColor =const Color(0xffF9FFF6),
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -28,11 +33,16 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? suffix;
   final void Function()? suffixPressed;
   final bool isClickable;
+  final int maxLines;
+  final Color disabledBorderColor;
+  final Color enabledBorderColor;
+  final Color focusedBorderColor;
+  final Color fillColor;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
+      maxLines: maxLines,
       controller: controller,
       keyboardType: type,
       obscureText: isPassword,
@@ -41,19 +51,21 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: onChange,
       onTap: onTap,
       validator: validate,
-         cursorColor: kPrimaryColor,
-
+      cursorColor: kPrimaryColor,
       decoration: InputDecoration(
-        fillColor: Color(0xffF9FFF6),
-        disabledBorder:  OutlineInputBorder(
-           borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Color(0xffDFDFDF),)),
-        enabledBorder:  OutlineInputBorder(
+        filled: true,
+        fillColor: fillColor,
+        disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: Color(0xffDFDFDF))),
-        focusedBorder:  OutlineInputBorder(
+            borderSide: BorderSide(
+              color: disabledBorderColor,
+            )),
+        enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color:kPrimaryColor)),
+            borderSide: BorderSide(color: enabledBorderColor)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide:  BorderSide(color: focusedBorderColor)),
         hintText: label,
         suffixIcon: suffix != null
             ? IconButton(

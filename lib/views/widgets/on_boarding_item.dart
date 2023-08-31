@@ -38,14 +38,16 @@ class OnBoardingItem extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        Text(
-          onBoardingModel.subText,
-          style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
-              height: 1.5),
-          textAlign: TextAlign.center,
+        Expanded(
+          child: Text(
+            onBoardingModel.subText,
+            style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+                height: 1.5),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

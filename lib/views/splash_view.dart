@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:labor/constant.dart';
-import 'package:labor/views/on_boarding_view.dart';
+import 'package:labor/views/select_language_view.dart';
 import 'package:labor/views/widgets/splash_view_body.dart';
+
+import '../custom_widgets/navigator_push_remove_until.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -17,12 +19,7 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     Future.delayed(
       const Duration(seconds: 2),
-      () => Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OnBoardingView(),
-          ),
-          (route) => false),
+      () => navigatorAndFinish(const SelectLanguageView(),context),
     );
   }
 
@@ -37,7 +34,7 @@ class _SplashViewState extends State<SplashView> {
         ),
       ),
       backgroundColor: kPrimaryColor,
-      body: SplashViewBody(),
+      body: const SplashViewBody(),
     );
   }
 }

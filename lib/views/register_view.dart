@@ -5,21 +5,22 @@ import 'package:labor/custom_widgets/custom_google_container.dart';
 import 'package:labor/custom_widgets/custom_text_button.dart';
 import 'package:labor/custom_widgets/custom_text_form_field.dart';
 import 'package:labor/custom_widgets/navigator_push_remove_until.dart';
-import 'package:labor/views/forget_password_view.dart';
 import 'package:labor/views/bottom_nav_view.dart';
-import 'package:labor/views/register_view.dart';
+import 'package:labor/views/login_view.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+class RegisterView extends StatefulWidget {
+  const RegisterView({Key? key}) : super(key: key);
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _RegisterViewState extends State<RegisterView> {
+  GlobalKey<FormState> formKey = GlobalKey();
+
   var  passwordController = TextEditingController();
   var  phoneController = TextEditingController();
-  GlobalKey<FormState> formKey = GlobalKey();
+  var  nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +36,10 @@ class _LoginViewState extends State<LoginView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 58,
+                    height: 50,
                   ),
                   const Center(
-                    child: Text('Login',
+                    child: Text('Register',
                         style:
                             TextStyle(fontSize: 28, fontWeight: FontWeight.w700)),
                   ),
@@ -58,14 +59,35 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 16,
                   ),
+                  const Text(
+                    'Full Name',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(height: 8),
+                   CustomTextFormField(
+                    controller: nameController,
+                    type: TextInputType.name,
+                    label: 'Enter Your Name',
+                    suffix: Icons.person,
+                     validate: (value) {
+                       if(value!.isEmpty){
+                         return 'please enter your name';
+                       }else{
+                         return null;
+                       }
+                     },
+                  ),
+                  const SizedBox(height: 16),
                   const Text(
                     'Phone',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
                    CustomTextFormField(
+                    type: TextInputType.phone,
+                    label: 'Enter Your Phone',
                     validate: (value) {
                       if(value!.isEmpty){
                         return 'please enter your phone';
@@ -73,9 +95,9 @@ class _LoginViewState extends State<LoginView> {
                         return null;
                       }
                     },
-                    label: 'Enter Your Phone',
                     suffix: Icons.phone,
                   ),
+
                   const SizedBox(height: 16),
                   const Text(
                     'Password',
@@ -83,6 +105,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   const SizedBox(height: 8),
                   CustomTextFormField(
+                    type: TextInputType.visiblePassword,
+                    controller: passwordController,
                     validate: (value) {
                       if(value!.isEmpty){
                         return 'please enter your password';
@@ -90,27 +114,14 @@ class _LoginViewState extends State<LoginView> {
                         return null;
                       }
                     },
-                    type: TextInputType.visiblePassword,
-                    controller: passwordController,
                     label: 'Enter Your Password',
                     suffix: Icons.visibility_outlined,
                   ),
                   const SizedBox(height: 16),
-                   Align(
-                    alignment: Alignment.centerRight,
-                    child: CustomTextButton(
-                      text: 'Forget Password ?',
-                      color: Colors.black,
-                      sizeText: 16,
-                      fontWeight: FontWeight.w500,
-                      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgetPasswordView(),)),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  CustomButton(buttonName: 'Login',radiusCircular: 8,onTap: () {
-                    if(formKey.currentState!.validate()){
-                      navigatorAndFinish(const HomeView(), context);
-                    }
+                   CustomButton(buttonName: 'Register',radiusCircular: 8,onTap: () {
+                     if(formKey.currentState!.validate()){
+                       navigatorAndFinish(const HomeView(), context);
+                     }
                   },),
                   const SizedBox(height: 16),
                   const Center(
@@ -128,13 +139,13 @@ class _LoginViewState extends State<LoginView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'Don’t Have Account ?',
+                        'Have Account ?',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                       ),
-                      CustomTextButton(text: 'Sign Up',color: Colors.black,sizeText: 16,fontWeight: FontWeight.w700,
+                      CustomTextButton(text: 'Sign in',color: Colors.black,sizeText: 16,fontWeight: FontWeight.w700,
                         onPressed:() {
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterView(),));
-                      },),
+                         Navigator.pop(context, MaterialPageRoute(builder: (context) => const LoginView(),));
+                      },)
                     ],
                   ),
 
