@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:labor_app/features/product/presentation/manager/product_cubit/product_cubit.dart';
 
+import '../../../../../core/utils/assets.dart';
+
 class MorningPeriodButton extends StatelessWidget {
   const MorningPeriodButton({
     super.key,
@@ -29,7 +31,7 @@ class MorningPeriodButton extends StatelessWidget {
               width: 2.5),
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset('assets/images/morning_period.png'),
+          Image.asset(AssetsData.morningPeriod),
           const SizedBox(
             width: 8,
           ),

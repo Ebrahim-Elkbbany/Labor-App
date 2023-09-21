@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:labor_app/constant.dart';
 import 'package:labor_app/core/widgets/navigator_push_remove_until.dart';
-import 'package:labor_app/features/splash/presentation/views/widgets/select_language_view.dart';
+import 'package:labor_app/features/select_language/presentation/views/select_language_view.dart';
 import 'package:labor_app/features/splash/presentation/views/widgets/splash_view_body.dart';
-
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -19,13 +18,16 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     Future.delayed(
       const Duration(seconds: 2),
-          () => navigatorAndFinish(const SelectLanguageView(),context),
+      () => navigatorAndFinish(
+        const SelectLanguageView(),
+        context,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
         systemOverlayStyle: const SystemUiOverlayStyle(

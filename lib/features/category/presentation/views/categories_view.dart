@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:labor_app/features/category/presentation/views/widgets/categories_grid_view.dart';
 
-
 class CategoriesView extends StatelessWidget {
   const CategoriesView({Key? key}) : super(key: key);
 
@@ -14,18 +13,26 @@ class CategoriesView extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+          ),
         ),
         centerTitle: true,
-        title: const Text('Categories',
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                color: Colors.black)),
+        title: const Text(
+          'Categories',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: const SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+          padding: EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 25,
+          ),
           child: CategoriesGridView(),
         ),
       ),

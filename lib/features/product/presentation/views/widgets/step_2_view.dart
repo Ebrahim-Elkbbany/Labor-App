@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:labor_app/constant.dart';
+import 'package:labor_app/core/utils/assets.dart';
 import 'package:labor_app/features/product/presentation/manager/product_cubit/product_cubit.dart';
 import 'package:labor_app/features/product/presentation/views/widgets/filter_container.dart';
 
@@ -73,7 +74,8 @@ class Step2View extends StatelessWidget {
                                   children: [
                                     CircleAvatar(
                                       child: Image.asset(
-                                          'assets/images/image_ontract_cleaning.png'),
+                                        AssetsData.ontractCleaning,
+                                      ),
                                     ),
                                     const SizedBox(
                                       width: 13,
@@ -155,7 +157,7 @@ class Step2View extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset('assets/images/country.png'),
+                                      Image.asset(AssetsData.country),
                                       const SizedBox(
                                         width: 4,
                                       ),

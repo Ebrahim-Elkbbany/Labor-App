@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labor_app/core/utils/assets.dart';
 import 'package:labor_app/features/history/presentation/views/widgets/past_container.dart';
 
 class PastView extends StatelessWidget {
@@ -17,20 +18,23 @@ class PastView extends StatelessWidget {
           ),
           children: const [
             PastContainer(
-                isDone: true,
-                image: 'assets/images/image_ontract_cleaning_2.png',
-                companyName: 'Nile Company',
-                price: '650'),
+              isDone: true,
+              image: AssetsData.ontractCleaning2,
+              companyName: 'Nile Company',
+              price: '650',
+            ),
             PastContainer(
-                isDone: true,
-                image: 'assets/images/image_ontract_cleaning.png',
-                companyName: 'United Group Company',
-                price: '1500'),
+              isDone: true,
+              image: AssetsData.ontractCleaning,
+              companyName: 'United Group Company',
+              price: '1500',
+            ),
             PastContainer(
-                isDone: false,
-                image: 'assets/images/image_ontract_cleaning_2.png',
-                companyName: 'Nile Company',
-                price: '650'),
+              isDone: false,
+              image: AssetsData.ontractCleaning2,
+              companyName: 'Nile Company',
+              price: '650',
+            ),
           ],
         ),
       ),

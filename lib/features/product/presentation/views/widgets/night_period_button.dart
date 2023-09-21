@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labor_app/core/utils/assets.dart';
 import 'package:labor_app/features/product/presentation/manager/product_cubit/product_cubit.dart';
 
 class NightPeriodButton extends StatelessWidget {
@@ -28,7 +29,7 @@ class NightPeriodButton extends StatelessWidget {
               width: 2.5),
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset('assets/images/night_period.png'),
+          Image.asset(AssetsData.nightPeriod),
           const SizedBox(
             width: 8,
           ),

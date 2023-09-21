@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:labor_app/constant.dart';
+import 'package:labor_app/core/utils/assets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BannerPageView extends StatelessWidget {
@@ -25,7 +26,7 @@ class BannerPageView extends StatelessWidget {
             itemCount: 3,
             itemBuilder: (context, index) => Row(
               children: [
-                Image.asset('assets/images/banner.png'),
+                Image.asset(AssetsData.banner),
                 const SizedBox(
                   width: 5,
                 )

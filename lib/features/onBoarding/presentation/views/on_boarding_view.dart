@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/constant.dart';
-import 'package:labor_app/core/widgets/custom_button.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
 import 'package:labor_app/core/widgets/custom_text_button.dart';
 import 'package:labor_app/core/widgets/navigator_push_remove_until.dart';
 import 'package:labor_app/features/auth/presentation/views/login_view.dart';
 import 'package:labor_app/features/onBoarding/data/models/on_boarding_model.dart';
 import 'package:labor_app/features/onBoarding/presentation/views/widgets/on_boarding_item.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:labor_app/features/onBoarding/presentation/views/widgets/page_indicator_button_sec.dart';
+
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
@@ -23,7 +25,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
+          toolbarHeight: 70.h,
         actions: [
           if (isLast == false)
             CustomTextButton(
@@ -32,7 +34,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               },
               text: 'Skip',
               color: orangePrimaryColor,
-              sizeText: 18,
+              sizeText: 18.sp,
               fontWeight: FontWeight.bold,
             )
         ],
@@ -56,43 +58,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               physics: const BouncingScrollPhysics(),
               itemCount: OnBoardingModel.boarding.length,
               itemBuilder: (context, index) => OnBoardingItem(
-                  onBoardingModel: OnBoardingModel.boarding[index]),
+                onBoardingModel: OnBoardingModel.boarding[index],
+              ),
             ),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: SizeConfig.height(context, 45),
           ),
-          SmoothPageIndicator(
-            controller: pageController,
-            count: OnBoardingModel.boarding.length,
-            effect: const ExpandingDotsEffect(
-              dotColor: Color(0xffD9D9D9),
-              dotHeight: 9,
-              dotWidth: 9,
-              spacing: 5,
-              activeDotColor: orangePrimaryColor,
-            ),
+          SmoothIndicatorAndButtonSec(
+            isLast: isLast,
+            pageController: pageController,
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButton(
-              buttonName: isLast == true ? 'Enter' : 'Next',
-              onTap: () {
-                if (isLast == true) {
-                  navigatorAndFinish(const LoginView(), context);
-                } else {
-                  pageController.nextPage(
-                      duration: const Duration(milliseconds: 700),
-                      curve: Curves.fastLinearToSlowEaseIn);
-                }
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 50,
+          SizedBox(
+            height: SizeConfig.height(context, 90),
           ),
         ],
       ),

@@ -1,3 +1,5 @@
+import 'package:labor_app/core/utils/assets.dart';
+
 class OnBoardingModel {
   final String image;
   final String text;
@@ -7,17 +9,17 @@ class OnBoardingModel {
 
   static List<OnBoardingModel> boarding = [
     OnBoardingModel(
-      image: 'assets/images/onBoarding1.png',
+      image: AssetsData.onBoarding1,
       text: 'Easy Process',
       subText: 'Find all your house needs in one place. \nWe provide every service to make your \nhome experience smooth.',
     ),
     OnBoardingModel(
-      image: 'assets/images/onBoarding2.png',
+      image: AssetsData.onBoarding2,
       text: 'Expert People',
       subText: 'We have the best in class individuals \nworking just for you. They are well  \ntrained and capable of handling \nanything you need.',
     ),
     OnBoardingModel(
-      image: 'assets/images/onBoarding3.png',
+      image: AssetsData.onBoarding3,
       text: 'All In One Place',
       subText: 'We have all the household services \nyou need on a daily basis with \neasy access',
     ),

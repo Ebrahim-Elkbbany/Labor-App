@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:labor_app/constant.dart';
+import 'package:labor_app/core/utils/assets.dart';
 import 'package:labor_app/core/widgets/custom_button.dart';
 import 'package:labor_app/core/widgets/navigator_push_.dart';
 import 'package:labor_app/features/history/presentation/views/history_view.dart';
@@ -115,7 +116,7 @@ class ProductView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     child: Image.asset(
-                      'assets/images/flat.png',
+                      AssetsData.flat,
                     ),
                   ),
                 ],

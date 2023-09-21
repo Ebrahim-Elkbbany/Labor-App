@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labor_app/core/utils/assets.dart';
 import 'package:labor_app/features/history/presentation/views/widgets/on_going_container.dart';
 
 class OnGoingView extends StatelessWidget {
@@ -17,26 +18,29 @@ class OnGoingView extends StatelessWidget {
           ),
           children: const [
             OnGoingContainer(
-                isAccept: true,
-                image: 'assets/images/image_ontract_cleaning.png',
-                companyName: 'United Group Company',
-                price: '1500'),
+              isAccept: true,
+              image: AssetsData.ontractCleaning,
+              companyName: 'United Group Company',
+              price: '1500',
+            ),
             OnGoingContainer(
-                isAccept: false,
-                image: 'assets/images/image_ontract_cleaning_2.png',
-                companyName: 'Nile Company',
-                price: '650'),
+              isAccept: false,
+              image: AssetsData.ontractCleaning2,
+              companyName: 'Nile Company',
+              price: '650',
+            ),
             OnGoingContainer(
-                isAccept: true,
-                image: 'assets/images/image_ontract_cleaning.png',
-                companyName: 'United Group Company',
-                price: '1500'),
+              isAccept: true,
+              image: AssetsData.ontractCleaning,
+              companyName: 'United Group Company',
+              price: '1500',
+            ),
             OnGoingContainer(
-                isAccept: false,
-                image: 'assets/images/image_ontract_cleaning_2.png',
-                companyName: 'Nile Company',
-                price: '650'),
-           
+              isAccept: false,
+              image: AssetsData.ontractCleaning2,
+              companyName: 'Nile Company',
+              price: '650',
+            ),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/constant.dart';
 
 
@@ -43,6 +44,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(fontSize: 16.sp),
       maxLines: maxLines,
       controller: controller,
       keyboardType: type,
@@ -54,6 +56,7 @@ class CustomTextFormField extends StatelessWidget {
       validator: validate,
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(
+
         filled: true,
         fillColor: fillColor,
         disabledBorder: OutlineInputBorder(
@@ -73,6 +76,7 @@ class CustomTextFormField extends StatelessWidget {
                 onPressed: suffixPressed,
                 icon: Icon(
                   suffix,
+
                 ),
               )
             : null,

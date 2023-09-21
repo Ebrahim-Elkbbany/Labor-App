@@ -41,7 +41,7 @@ class HomeViewBody extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xffF5DF99)),
+                      color: Color(0xffF5DF99),),
                 ),
               ],
             ),
@@ -51,7 +51,7 @@ class HomeViewBody extends StatelessWidget {
             const Text(
               'Find your home service \nNeed A Helping Hand Today?',
               style: TextStyle(
-                  fontWeight: FontWeight.w700, fontSize: 22, height: 1.4),
+                  fontWeight: FontWeight.w700, fontSize: 22, height: 1.4,),
             ),
             const SizedBox(
               height: 28,

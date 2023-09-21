@@ -1,53 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:labor_app/core/utils/assets.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
+import 'package:labor_app/core/utils/styles.dart';
 import 'package:labor_app/features/onBoarding/data/models/on_boarding_model.dart';
 
 class OnBoardingItem extends StatelessWidget {
   const OnBoardingItem({Key? key, required this.onBoardingModel})
       : super(key: key);
   final OnBoardingModel onBoardingModel;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 19),
+            padding: EdgeInsets.symmetric(horizontal: 19.w),
             child: Stack(
-              alignment:Alignment.center ,
+              alignment: Alignment.center,
               children: [
                 Image.asset(
-                  'assets/images/onBoarding_vector.png',
+                  AssetsData.onBoardingVector,
+                  height: 291.h,
+                  width: double.infinity,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 64.w),
                   child: Image.asset(
+                     fit: BoxFit.contain,
                     onBoardingModel.image,
+                    height: 299.h,
+                    width: double.infinity,
                   ),
                 ),
               ],
             ),
           ),
         ),
-        const SizedBox(
-          height: 57,
+        SizedBox(
+          height: SizeConfig.height(context, 57),
         ),
         Text(
           onBoardingModel.text,
-          style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 34),
+          style: Styles.textStyle34,
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: SizeConfig.height(context, 26),
         ),
-        Expanded(
-          child: Text(
-            onBoardingModel.subText,
-            style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
-                height: 1.5),
-            textAlign: TextAlign.center,
+        Text(
+          onBoardingModel.subText,
+          style:  TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.black54,
           ),
+          textAlign: TextAlign.center,
         ),
       ],
     );
