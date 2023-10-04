@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/core/utils/assets.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
+import 'package:labor_app/core/utils/styles.dart';
 import 'package:labor_app/core/widgets/navigator_push_.dart';
 import 'package:labor_app/features/product/presentation/views/product_view.dart';
 
@@ -14,11 +17,12 @@ class CategoriesGridView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: 6,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 24,
-          mainAxisSpacing: 12,
-          childAspectRatio: 171 / 193),
+          crossAxisSpacing: 24.w,
+          mainAxisSpacing: 12.h,
+          childAspectRatio: 171 / 193
+      ),
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -36,16 +40,16 @@ class CategoriesGridView extends StatelessWidget {
               children: [
                 Image.asset(
                   AssetsData.categories,
+                  fit: BoxFit.cover,
+                  width: 89.23.w,
+                  height: 94.h,
                 ),
-                const SizedBox(
-                  height: 24,
+                 SizedBox(
+                  height: SizeConfig.height(context, 24),
                 ),
-                const Text(
+                 Text(
                   'hourly cleaning',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: Styles.textStyle18
                 ),
               ],
             ),

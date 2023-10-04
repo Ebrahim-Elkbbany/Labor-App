@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:labor_app/core/utils/styles.dart';
 import 'package:labor_app/features/history/presentation/manager/history_cubit/history_cubit.dart';
 import 'package:labor_app/features/history/presentation/views/widgets/history_view_body.dart';
 
@@ -17,12 +18,11 @@ class HistoryView extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               centerTitle: true,
-              title: const Text(
+              title: Text(
                 'History',
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black),
+                style: Styles.textStyle18.copyWith(
+                  color: Colors.black,
+                ),
               ),
             ),
             body: HistoryViewBody(cubit: cubit),
@@ -32,5 +32,3 @@ class HistoryView extends StatelessWidget {
     );
   }
 }
-
-

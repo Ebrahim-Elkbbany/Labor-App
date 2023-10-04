@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/core/utils/assets.dart';
 import 'package:labor_app/features/history/presentation/views/widgets/on_going_container.dart';
 
@@ -11,10 +12,10 @@ class OnGoingView extends StatelessWidget {
       child: Container(
         color: const Color(0xffF9FFF6),
         child: ListView(
-          padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
-            top: 24.0,
+          padding:  EdgeInsets.only(
+            left: 20.w,
+            right: 20.w,
+            top: 24.h,
           ),
           children: const [
             OnGoingContainer(

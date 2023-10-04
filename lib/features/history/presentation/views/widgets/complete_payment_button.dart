@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/constant.dart';
 import 'package:labor_app/core/widgets/custom_text_button.dart';
 import 'package:labor_app/core/widgets/navigator_push_.dart';
@@ -13,9 +14,9 @@ class CompletePaymentButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.only(top: 4.0),
-          child: Divider(
+        Padding(
+          padding: EdgeInsets.only(top: 4.0.h),
+          child: const Divider(
             thickness: 0.2,
           ),
         ),
@@ -23,18 +24,22 @@ class CompletePaymentButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                height: 34,
-                child: CustomTextButton(
-                  onPressed: () {
-                    navigatorPush(const PaymentView(), context);
-                  },
-                  text: 'Complete payment methods',
-                  color: kPrimaryColor,
-                  sizeText: 14,
-                )),
+              height: 34.h,
+              child: CustomTextButton(
+                onPressed: () {
+                  navigatorPush(const PaymentView(), context);
+                },
+                text: 'Complete payment methods',
+                color: kPrimaryColor,
+                sizeText: 14.sp,
+              ),
+            ),
             const Spacer(),
-            const Icon(Icons.arrow_forward_ios_outlined,
-                color: kPrimaryColor, size: 16),
+            Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: kPrimaryColor,
+              size: 16.w,
+            ),
           ],
         ),
       ],

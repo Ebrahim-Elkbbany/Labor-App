@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/constant.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
+import 'package:labor_app/core/utils/styles.dart';
 import 'package:labor_app/core/widgets/custom_text_button.dart';
 import 'package:labor_app/features/category/presentation/views/categories_view.dart';
 import 'package:labor_app/features/category/presentation/views/widgets/categories_grid_view.dart';
@@ -15,64 +18,55 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     PageController pageController = PageController();
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 34,
+            SizedBox(
+              height: SizeConfig.height(context, 31),
             ),
-            const Row(
+            Row(
               children: [
-                Text(
-                  'Good Morning',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                Text('Good Morning', style: Styles.textStyle14),
                 SizedBox(
-                  width: 4,
+                  width: SizeConfig.width(context, 4),
                 ),
                 Text(
-                  'Maged ',
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xffF5DF99),),
+                  'ebrahim ',
+                  style: Styles.textStyle14.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: const Color(0xffF5DF99),
+                  ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: SizeConfig.height(context, 15),
             ),
-            const Text(
+            Text(
               'Find your home service \nNeed A Helping Hand Today?',
               style: TextStyle(
-                  fontWeight: FontWeight.w700, fontSize: 22, height: 1.4,),
+                fontWeight: FontWeight.w700,
+                fontSize: 22.sp,
+                height: 1.4,
+              ),
             ),
-            const SizedBox(
-              height: 28,
+            SizedBox(
+              height: SizeConfig.height(context, 27),
             ),
             const LocationContainer(),
-            const SizedBox(
-              height: 28,
-            ),
             BannerPageView(pageController: pageController),
-            const SizedBox(
-              height: 18,
+            SizedBox(
+              height: SizeConfig.height(context, 18),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                 Text(
                   'Our services',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: Styles.textStyle18
                 ),
                 const Spacer(),
                 CustomTextButton(
@@ -85,9 +79,12 @@ class HomeViewBody extends StatelessWidget {
                   text: 'See ALL',
                   color: kPrimaryColor,
                   fontWeight: FontWeight.w700,
-                  sizeText: 12,
+                  sizeText: 12.sp,
                 ),
               ],
+            ),
+            SizedBox(
+              height: SizeConfig.height(context, 18),
             ),
             const CategoriesGridView(),
           ],

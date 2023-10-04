@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/core/utils/assets.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
 
 class LocationContainer extends StatelessWidget {
   const LocationContainer({
@@ -13,10 +15,10 @@ class LocationContainer extends StatelessWidget {
         color: const Color(0xff4B8673),
         borderRadius: BorderRadius.circular(8),
       ),
-      height: 64,
+      height: 64.h,
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 8),
+        padding:  EdgeInsets.symmetric(horizontal: 17.w, vertical: 8.h),
         child: Row(
           children: [
             Stack(
@@ -31,10 +33,10 @@ class LocationContainer extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              width: 17,
+             SizedBox(
+              width: SizeConfig.width(context, 17),
             ),
-            const Column(
+             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,7 +44,7 @@ class LocationContainer extends StatelessWidget {
                   'your location',
                   style: TextStyle(
                     color: Colors.white54,
-                    fontSize: 10,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -50,7 +52,7 @@ class LocationContainer extends StatelessWidget {
                   'Jiddah Alexander Language School , ALS',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 11,
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

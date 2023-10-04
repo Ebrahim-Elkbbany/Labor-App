@@ -1,6 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:labor_app/constant.dart';
 import 'package:labor_app/core/utils/assets.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BannerPageView extends StatelessWidget {
@@ -15,38 +18,34 @@ class BannerPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 140,
-          width: double.infinity,
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            scrollDirection: Axis.horizontal,
-            controller: pageController,
-            physics: const BouncingScrollPhysics(),
-            itemCount: 3,
-            itemBuilder: (context, index) => Row(
-              children: [
-                Image.asset(AssetsData.banner),
-                const SizedBox(
-                  width: 5,
-                )
-              ],
-            ),
+        CarouselSlider.builder(
+          itemBuilder: (context, index, realIndex) => Image.asset(
+            AssetsData.banner,
+            fit: BoxFit.contain,
           ),
-        ),
-        const SizedBox(
-          height: 15,
+          itemCount: 3,
+          options: CarouselOptions(
+            initialPage: 0,
+            viewportFraction: 1.0,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            autoPlayInterval: const Duration(seconds: 5),
+            autoPlayAnimationDuration: const Duration(seconds: 1),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            scrollDirection: Axis.horizontal,
+          ),
         ),
         Align(
           alignment: Alignment.center,
           child: SmoothPageIndicator(
             controller: pageController,
             count: 3,
-            effect: const ScaleEffect(
+            effect: ScaleEffect(
               dotColor: Color(0xffD9D9D9),
-              dotHeight: 6,
-              dotWidth: 6,
-              spacing: 6,
+              dotHeight: 6.h,
+              dotWidth: 6.w,
+              spacing: 6.w,
               activeDotColor: kPrimaryColor,
             ),
           ),

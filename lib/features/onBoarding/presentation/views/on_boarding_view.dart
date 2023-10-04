@@ -25,7 +25,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          toolbarHeight: 70.h,
+
         actions: [
           if (isLast == false)
             CustomTextButton(

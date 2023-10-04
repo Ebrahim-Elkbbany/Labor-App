@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:labor_app/core/utils/styles.dart';
 import 'package:labor_app/features/category/presentation/views/widgets/categories_grid_view.dart';
 
 class CategoriesView extends StatelessWidget {
@@ -9,31 +11,19 @@ class CategoriesView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF9FFF6),
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-          ),
-        ),
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           'Categories',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
-          ),
+          style: Styles.textStyle18.copyWith(color: Colors.black)
         ),
       ),
-      body: const SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 25,
+            horizontal: 30.h,
+            vertical: 25.h,
           ),
-          child: CategoriesGridView(),
+          child: const CategoriesGridView(),
         ),
       ),
     );

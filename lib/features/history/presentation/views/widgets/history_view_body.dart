@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labor_app/core/utils/resposive_size_config.dart';
 import 'package:labor_app/features/history/presentation/manager/history_cubit/history_cubit.dart';
 import 'package:labor_app/features/history/presentation/views/widgets/on_going_body.dart';
 import 'package:labor_app/features/history/presentation/views/widgets/past_body.dart';
@@ -23,8 +24,8 @@ class HistoryViewBody extends StatelessWidget {
             PastBody(cubit: cubit),
           ],
         ),
-        const SizedBox(
-          height: 19,
+         SizedBox(
+          height: SizeConfig.height(context,19 ),
         ),
         cubit.historyScreens[cubit.currentIndex],
       ],
